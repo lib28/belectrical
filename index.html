@@ -1,13 +1,105 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/belectrical-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BELECTRICAL • Cape Town Electricians</title>
-    <link rel="icon" type="image/png" href="/logo-belectrical-large.png" />
-  </head>
 
-  <body class="bg-slate-950 text-slate-50 antialiased">
+    <!-- SEO TITLE + DESCRIPTION -->
+    <title>
+      BELECTRICAL | Electrician in Cape Town | DB Boards • Solar • Fault Finding
+    </title>
+
+    <meta
+      name="description"
+      content="BELECTRICAL is a registered electrician in Cape Town. We specialise in DB boards, COC compliance, fault finding, solar & backup power, and neat, compliant installations in areas like Table View, CBD, Bellville and surrounds."
+    />
+
+    <meta
+      name="keywords"
+      content="electrician cape town, electrician in cape town, registered electrician, certified electrician, electrical contractor cape town, db board, coc, solar, inverter, fault finding, emergency electrician cape town"
+    />
+
+    <!-- OPEN GRAPH (FOR WHATSAPP / FACEBOOK PREVIEWS) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://belectrical.netlify.app/" />
+    <meta
+      property="og:title"
+      content="BELECTRICAL | Electrician in Cape Town"
+    />
+    <meta
+      property="og:description"
+      content="Registered electrical contractor in Cape Town for DB boards, COCs, solar, fault finding and neat, compliant installs."
+    />
+    <meta
+      property="og:image"
+      content="https://belectrical.netlify.app/belectrical-logo.png"
+    />
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="BELECTRICAL | Electrician in Cape Town"
+    />
+    <meta
+      name="twitter:description"
+      content="DB boards, COCs, solar, backup and fault finding done neatly and to regulation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://belectrical.netlify.app/belectrical-logo.png"
+    />
+
+    <!-- LOCAL BUSINESS SCHEMA. Update later if you get a custom domain or street address -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Electrician",
+        "name": "BELECTRICAL",
+        "image": "https://belectrical.netlify.app/belectrical-logo.png",
+        "@id": "https://belectrical.netlify.app/",
+        "url": "https://belectrical.netlify.app/",
+        "telephone": "+27 71 271 8590",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cape Town",
+          "addressRegion": "Western Cape",
+          "addressCountry": "ZA"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Cape Town"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Table View"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Cape Town CBD"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Bellville"
+          }
+        ],
+        "description": "Registered electrician in Cape Town specialising in DB boards, COC compliance, fault finding, solar and backup installations, and neat, compliant wiring.",
+        "serviceType": [
+          "DB board upgrades and rewiring",
+          "COC inspections and compliance",
+          "Fault finding and repairs",
+          "Solar and inverter installations",
+          "Emergency electrician call-outs"
+        ]
+      }
+    </script>
+
+    <title>BELECTRICAL</title>
+  </head>
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
