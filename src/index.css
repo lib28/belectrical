@@ -1,0 +1,397 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- GLOBAL ---------- */
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-50 antialiased;
+}
+
+.container-default {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-default {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* ---------- FRAME FX ---------- */
+
+.frame-noise {
+  position: fixed;
+  inset: -20px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  background-image: url("/noise.png");
+  background-size: 220px 220px;
+  background-repeat: repeat;
+  animation: noiseShift 1.1s steps(2, end) infinite;
+}
+
+.frame-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle at center, transparent 0, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* soft orbits behind hero */
+.hero-orbit {
+  position: fixed;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-orbit-1 {
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  right: -120px;
+  background: radial-gradient(circle at 30% 30%, #22d3ee, transparent 60%);
+}
+
+.hero-orbit-2 {
+  width: 340px;
+  height: 340px;
+  bottom: -80px;
+  left: -120px;
+  background: radial-gradient(circle at 40% 40%, #22c55e, transparent 65%);
+}
+
+/* ---------- LOGO ---------- */
+
+.logo-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-img {
+  width: 14rem;
+  max-width: 60vw;
+  display: block;
+  margin-inline: auto;
+  filter: drop-shadow(0 0 26px rgba(56, 189, 248, 0.6));
+  animation: logoFloat 5s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .logo-img {
+    width: 18rem;
+  }
+}
+
+.logo-glow {
+  position: absolute;
+  inset: 18%;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 30% 0%, rgba(125, 211, 252, 0.45), transparent 60%),
+    radial-gradient(circle at 70% 100%, rgba(22, 163, 74, 0.4), transparent 70%);
+  filter: blur(26px);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  z-index: -1;
+}
+
+/* ---------- ELECTRIC TEXT ---------- */
+
+.electric-text {
+  position: relative;
+  text-shadow:
+    0 0 18px rgba(56, 189, 248, 0.55),
+    0 0 32px rgba(59, 130, 246, 0.4);
+  letter-spacing: 0.04em;
+  animation: electricPulse 2.4s ease-in-out infinite alternate;
+}
+
+.electric-text span {
+  color: rgb(56 189 248);
+  text-shadow:
+    0 0 18px rgba(56, 189, 248, 0.9),
+    0 0 40px rgba(59, 130, 246, 0.8);
+  animation: electricFlicker 1.9s steps(2, end) infinite;
+}
+
+/* small scan line over text */
+.electric-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -8px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.85),
+    transparent
+  );
+  opacity: 0.0;
+  animation: electricScan 3.1s ease-in-out infinite;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.btn-electric {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border-radius: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition:
+    transform 0.16s ease-out,
+    box-shadow 0.16s ease-out,
+    border-color 0.16s ease-out,
+    background-color 0.16s ease-out,
+    color 0.16s ease-out;
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.35),
+    0 14px 35px rgba(15, 23, 42, 0.8);
+  overflow: hidden;
+}
+
+.btn-electric::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 10% 0%,
+    rgba(248, 250, 252, 0.16),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.18s ease-out;
+}
+
+.btn-electric:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.7),
+    0 18px 40px rgba(8, 47, 73, 0.9);
+}
+
+.btn-electric:hover::before {
+  opacity: 1;
+}
+
+/* ---------- GLASS PANELS ---------- */
+
+.glass-panel {
+  border-radius: 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.08), transparent 55%),
+    rgba(15, 23, 42, 0.85);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.8),
+    inset 0 0 0 0.5px rgba(148, 163, 184, 0.3);
+}
+
+.glass-hover {
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    border-color 0.18s ease-out,
+    background 0.18s ease-out;
+}
+
+.glass-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.95),
+    0 0 32px rgba(56, 189, 248, 0.7);
+}
+
+/* ---------- BADGE ---------- */
+
+.badge-soft {
+  border-radius: 9999px;
+  padding-inline: 0.75rem;
+  padding-block: 0.3rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* ---------- BREAKER SCENE ---------- */
+
+.breaker-wrap {
+  perspective: 1200px;
+}
+
+.breaker-card {
+  position: relative;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent 55%),
+    rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow:
+    0 26px 70px rgba(15, 23, 42, 1),
+    0 0 50px rgba(8, 47, 73, 0.9);
+  transform-style: preserve-3d;
+  transform: translateY(40px) rotateX(15deg) scale(0.96);
+  opacity: 0;
+  filter: blur(4px);
+  transition:
+    transform 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.6s ease-out,
+    filter 0.6s ease-out;
+}
+
+.breaker-visible .breaker-card {
+  transform: translateY(0) rotateX(0deg) scale(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.breaker-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translateZ(40px);
+}
+
+/* soft spotlight on breaker */
+.breaker-spotlight {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(226, 232, 240, 0.35), transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(56, 189, 248, 0.25), transparent 70%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* scanning line over breaker */
+.breaker-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 30%;
+  top: -40%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(56, 189, 248, 0.45),
+    transparent
+  );
+  opacity: 0.0;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: breakerScan 4s ease-in-out infinite;
+}
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes noiseShift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 60px;
+  }
+}
+
+@keyframes logoFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes electricPulse {
+  0% {
+    text-shadow:
+      0 0 10px rgba(56, 189, 248, 0.4),
+      0 0 22px rgba(37, 99, 235, 0.35);
+  }
+  100% {
+    text-shadow:
+      0 0 18px rgba(56, 189, 248, 0.75),
+      0 0 40px rgba(37, 99, 235, 0.7);
+  }
+}
+
+@keyframes electricFlicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  19%,
+  23%,
+  26%,
+  54%,
+  58% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes electricScan {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 0.75;
+    transform: translateY(130%);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(220%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(220%);
+  }
+}
+
+@keyframes breakerScan {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 0.85;
+    transform: translateY(160%);
+  }
+  35% {
+    opacity: 0;
+    transform: translateY(260%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(260%);
+  }
+}
