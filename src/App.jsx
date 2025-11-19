@@ -3,6 +3,7 @@ import React from "react";
 import "./index.css";
 
 import logo from "./assets/belectrical-logo.png";
+import heroVideo from "./assets/belectrical-hero.mp4";
 
 import project1 from "./assets/project-1.png";
 import project2 from "./assets/project-2.png";
@@ -85,7 +86,9 @@ export default function App() {
       name
     )} in ${encodeURIComponent(
       area
-    )} and I need help with:%0A${encodeURIComponent(issue)}%0A%0APlease let me know availability.`;
+    )} and I need help with:%0A${encodeURIComponent(
+      issue
+    )}%0A%0APlease let me know availability.`;
 
     window.open(`https://wa.me/27712718590?text=${text}`, "_blank");
   };
@@ -99,13 +102,15 @@ export default function App() {
       <header className="sticky top-0 z-30 border-b border-cyan-500/10 bg-slate-950/80 backdrop-blur">
         <div className="container-default flex items-center justify-between py-3">
           <div className="flex items-center gap-3">
-            <div className="relative h-12 w-12 rounded-2xl bg-slate-900/80 ring-1 ring-cyan-400/50 shadow-[0_0_30px_rgba(34,211,238,0.45)] overflow-hidden">
+            {/* Small logo in nav */}
+            <div className="relative h-12 w-12 rounded-2xl bg-slate-900/80 ring-1 ring-cyan-400/50 shadow-[0_0_30px_rgba(34,211,238,0.45)] overflow-hidden flex items-center justify-center">
               <img
                 src={logo}
-                alt="Belectrical logo small"
-                className="h-full w-full object-contain"
+                alt="Belectrical logo"
+                className="h-10 w-10 object-contain"
               />
             </div>
+
             <div className="leading-tight">
               <p className="text-xs font-semibold tracking-[0.2em] text-cyan-300 uppercase">
                 Belectrical
@@ -142,23 +147,18 @@ export default function App() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(45,212,191,0.18),transparent_55%),radial-gradient(circle_at_bottom,_rgba(14,165,233,0.2),transparent_55%)]" />
 
           <div className="relative container-default text-center">
-            {/* Big logo */}
-            <div className="mx-auto mb-6 inline-flex items-center justify-center rounded-[1.75rem] border border-cyan-400/40 bg-slate-900/70 px-6 py-4 shadow-[0_0_40px_rgba(56,189,248,0.65)]">
-              <div className="mr-4 h-14 w-14 overflow-hidden rounded-2xl bg-slate-950/80 ring-1 ring-cyan-300/60">
-                <img
-                  src={logo}
-                  alt="Belectrical logo"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-              <div className="text-left">
-                <div className="electric-text-small text-sm font-semibold tracking-[0.35em] text-cyan-300 uppercase">
-                  BELECTRICAL
-                </div>
-                <p className="mt-1 text-xs text-slate-300">
-                  Neat, compliant work • Certified, registered electrician in Cape Town
-                </p>
-              </div>
+            {/* VIDEO HERO “LOGO” */}
+            <div className="mx-auto mb-8 w-full max-w-xl rounded-[1.75rem] border border-cyan-400/40 bg-slate-900/70 shadow-[0_0_40px_rgba(56,189,248,0.65)] overflow-hidden relative">
+              <video
+                src={heroVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              {/* subtle gradient overlay */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
             </div>
 
             {/* Electric heading */}
@@ -168,9 +168,8 @@ export default function App() {
             </h1>
 
             <p className="mt-6 max-w-2xl mx-auto text-slate-300 text-lg">
-              DB boards, CoCs, solar, backups and fault finding — done properly,
-              labeled and to regulation by an experienced electrical contractor in
-              Cape Town. Serving suburbs like Table View, CBD, Bellville and surrounds.
+              Electrician in Cape Town for DB boards, CoCs, solar, backups and
+              fault finding — done properly, labeled, and to regulation.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -189,7 +188,8 @@ export default function App() {
             </div>
 
             <p className="mt-4 text-xs uppercase tracking-[0.2em] text-slate-400">
-              Residential • Commercial • Industrial • Electrician in Cape Town
+              Registered electricians • Electrical contractor Cape Town • Table
+              View • CBD • Bellville
             </p>
           </div>
         </section>
@@ -203,17 +203,17 @@ export default function App() {
                   Services we offer
                 </h2>
                 <p className="mt-3 text-slate-300 max-w-xl">
-                  Whether you need an electrician in Cape Town for a small fault
-                  or a full DB and solar upgrade, we focus on safe, neat and
-                  compliant work every time.
+                  From new builds and renovations to emergency call-outs, we
+                  focus on safe, neat and compliant work by a certified,
+                  registered electrician.
                 </p>
               </div>
               <p className="text-xs text-slate-400 max-w-xs">
-                Registered, insured{" "}
+                Registered, insured and experienced in{" "}
                 <span className="text-cyan-300">
-                  electrical contractor Cape Town
-                </span>{" "}
-                experienced in DB boards, CoCs, solar, automation and custom installs.
+                  DB boards, CoCs, solar, automation and custom installs
+                </span>
+                .
               </p>
             </div>
 
@@ -247,8 +247,7 @@ export default function App() {
                 <p className="mt-3 text-slate-300 max-w-xl">
                   Before/after shots that show the difference between &quot;just
                   working&quot; and{" "}
-                  <span className="text-cyan-300">done properly</span> by a
-                  registered electrician.
+                  <span className="text-cyan-300">done properly</span>.
                 </p>
               </div>
               <p className="text-xs text-slate-400 max-w-xs">
@@ -292,9 +291,8 @@ export default function App() {
                 Book an electrician
               </h2>
               <p className="mt-3 text-slate-300 max-w-xl">
-                Send us a quick WhatsApp with your issue and area. You&apos;ll
-                be speaking directly to a registered electrician in Cape Town,
-                not a call centre.
+                Send us a quick WhatsApp with your issue and area. We&apos;ll
+                reply with options and availability.
               </p>
 
               <form
@@ -364,8 +362,7 @@ export default function App() {
                   </a>
                 </p>
                 <p className="mt-2 text-xs text-slate-400">
-                  Service area: Cape Town & surrounds – including Table View,
-                  CBD, Bellville and nearby suburbs.
+                  Service area: Cape Town & surrounds.
                 </p>
               </div>
 
@@ -387,7 +384,7 @@ export default function App() {
 
       {/* ---------- FOOTER ---------- */}
       <footer className="border-t border-white/10 py-6 text-center text-xs text-slate-500">
-        © {currentYear} BELECTRICAL • Electrician Cape Town • Electrical contractor Cape Town
+        © {currentYear} BELECTRICAL • Cape Town, South Africa
       </footer>
     </div>
   );

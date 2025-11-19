@@ -2,21 +2,174 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <title>BELECTRICAL • Electrician in Cape Town</title>
 
-    <title>BELECTRICAL • Cape Town Electricians</title>
+    <!-- Favicon / logo -->
+    <link rel="icon" type="image/png" href="/logo-belectrical-large.png" />
 
-    <!-- ✅ Google Search Console verification -->
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Search Console verification (KEEP THIS!) -->
     <meta
       name="google-site-verification"
       content="pU_I95jz4h8pU_LWRY7o3u1Jr01cht28e79yqI7khjA"
     />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/logo-belectrical-large.png" />
+    <!-- Basic SEO -->
+    <meta
+      name="description"
+      content="BELECTRICAL is a registered electrician in Cape Town offering neat DB boards, CoCs, solar, backup power, fault finding and compliant installations in Table View, CBD, Bellville and surrounding areas. Call 071 271 8590."
+    />
+    <meta
+      name="keywords"
+      content="electrician Cape Town, electrician in Cape Town, registered electrician, certified electrician, electrical contractor Cape Town, DB board, COC, solar installation, backup power, Table View, Cape Town CBD, Bellville"
+    />
+    <link rel="canonical" href="https://belectrical.netlify.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="BELECTRICAL • Electrician in Cape Town"
+    />
+    <meta
+      property="og:description"
+      content="Registered electrician in Cape Town specialising in DB boards, CoCs, solar, backup power and fault finding. Neat, compliant work in Table View, CBD, Bellville & surrounds."
+    />
+    <meta property="og:url" content="https://belectrical.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://belectrical.netlify.app/logo-belectrical-large.png"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="BELECTRICAL • Electrician in Cape Town"
+    />
+    <meta
+      name="twitter:description"
+      content="Registered electrical contractor in Cape Town – DB boards, CoCs, solar, backup power & fault finding."
+    />
+    <meta
+      name="twitter:image"
+      content="https://belectrical.netlify.app/logo-belectrical-large.png"
+    />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#020617" />
+
+    <!-- LocalBusiness / Electrician JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Electrician",
+        "name": "BELECTRICAL",
+        "image": "https://belectrical.netlify.app/logo-belectrical-large.png",
+        "url": "https://belectrical.netlify.app/",
+        "telephone": "+27-71-271-8590",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cape Town",
+          "addressRegion": "Western Cape",
+          "addressCountry": "ZA"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Cape Town"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Table View"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Cape Town CBD"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Bellville"
+          }
+        ],
+        "description": "Registered electrician in Cape Town offering DB boards, CoCs, solar, backup power, fault finding and neat electrical installations.",
+        "sameAs": [],
+        "priceRange": "R",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Services schema (Service) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Electrical contractor Cape Town",
+        "serviceType": "Electrical installation, fault finding and certification",
+        "provider": {
+          "@type": "Electrician",
+          "name": "BELECTRICAL",
+          "url": "https://belectrical.netlify.app/"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Cape Town"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Electrical services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "DB board upgrades & repairs",
+                "description": "Neat, labeled DB boards with load balancing and compliant wiring."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "COC (Certificate of Compliance)",
+                "description": "Electrical compliance certificates for property sales, insurance and renovations."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Solar & backup power",
+                "description": "Inverters, batteries and essential circuits for load-shedding ready homes and businesses."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fault finding",
+                "description": "Tripping breakers, RCD issues, no-power faults and burnt wiring located and repaired."
+              }
+            }
+          ]
+        }
+      }
+    </script>
 
     <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
